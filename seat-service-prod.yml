@@ -1,0 +1,29 @@
+server:
+  port: 9097
+
+spring:
+  datasource:
+    url: jdbc:postgresql://booker-seat-db:5432/booker-seat-db
+    username: ${DB_USERNAME:admin}
+    password: ${DB_PASSWORD:password}
+
+  kafka:
+    bootstrap-servers: booker-kafka:29092
+    consumer:
+      group-id: seat-service-prod
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        specific.avro.reader: "true"
+        schema.registry.url: http://booker-schema-registry:8081
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        schema.registry.url: http://booker-schema-registry:8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server-service:9090/eureka/

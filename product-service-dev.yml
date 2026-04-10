@@ -1,0 +1,21 @@
+server:
+  port: 9094
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5001/booker-product-db
+    username: admin
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka/
+
+logging:
+  level:
+    root: info

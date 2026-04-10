@@ -1,0 +1,27 @@
+server:
+  port: 9093
+
+spring:
+  datasource:
+    url: jdbc:postgresql://booker-auth-db:5432/booker-auth-db
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  data:
+    redis:
+      host: booker-redis-container
+      port: 6379
+      database: 1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server-service:9090/eureka/
+
+cors:
+  allowed-origins:
+    - https://your-frontend.com
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate

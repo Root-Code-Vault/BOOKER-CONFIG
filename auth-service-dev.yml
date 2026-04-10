@@ -1,0 +1,31 @@
+server:
+  port: 9093
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5000/booker-auth-db
+    username: admin
+    password: password
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka/
+
+cors:
+  allowed-origins:
+    - http://localhost:8081
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    root: info
+    org.springframework.web: DEBUG

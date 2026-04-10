@@ -1,0 +1,17 @@
+server:
+  port: 9092
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server-service:9090/eureka/
+
+logging:
+  level:
+    root: info
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - JwtAuthenticationFilter
