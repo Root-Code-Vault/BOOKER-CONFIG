@@ -10,6 +10,10 @@ spring:
     redis:
       host: localhost
       port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 eureka:
   client:
@@ -20,11 +24,6 @@ cors:
   allowed-origins:
     - http://localhost:8081
 
-spring:
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 logging:
   level:
     root: info

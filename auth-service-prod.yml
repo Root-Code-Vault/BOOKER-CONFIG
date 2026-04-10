@@ -11,6 +11,10 @@ spring:
       host: booker-redis-container
       port: 6379
       database: 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 eureka:
   client:
@@ -20,8 +24,3 @@ eureka:
 cors:
   allowed-origins:
     - https://your-frontend.com
-
-spring:
-  jpa:
-    hibernate:
-      ddl-auto: validate
