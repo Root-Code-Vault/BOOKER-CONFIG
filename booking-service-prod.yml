@@ -6,6 +6,10 @@ spring:
     url: jdbc:postgresql://booker-booking-db:5432/booker-booking-db
     username: ${DB_USERNAME:admin}
     password: ${DB_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
   data:
     redis:

@@ -6,6 +6,10 @@ spring:
     url: jdbc:postgresql://booker-payment-db:5432/booker-payment-db
     username: ${DB_USERNAME:admin}
     password: ${DB_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
   kafka:
     bootstrap-servers: booker-kafka:29092

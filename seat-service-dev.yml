@@ -6,6 +6,10 @@ spring:
     url: jdbc:postgresql://localhost:5003/booker-seat-db
     username: admin
     password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
   kafka:
     bootstrap-servers: localhost:9092
