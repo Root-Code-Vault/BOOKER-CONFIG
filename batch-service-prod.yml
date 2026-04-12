@@ -1,0 +1,17 @@
+server:
+  port: 9099
+
+spring:
+  datasource:
+    url: jdbc:postgresql://booker-batch-db:5432/booker-batch-db
+    username: ${DB_USERNAME:admin}
+    password: ${DB_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server-service:9090/eureka/
